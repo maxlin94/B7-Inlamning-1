@@ -1,0 +1,15 @@
+{
+  "name": "wordle",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "wordle.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
