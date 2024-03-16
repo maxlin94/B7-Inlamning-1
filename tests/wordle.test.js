@@ -29,14 +29,14 @@ describe('wordleCompare', () => {
             { letter: 'å', result: 'correct' }
         ]);
     });
-    it('should return an array of objects with result: incorrect for all letters', () => {
-        expect(wordleCompare('hejhej', 'blabla')).toEqual([
+    it('should return an array of objects with result: incorrect for all incorrect letters', () => {
+        expect(wordleCompare('hejhea', 'blabla')).toEqual([
             { letter: 'h', result: 'incorrect' },
             { letter: 'e', result: 'incorrect' },
             { letter: 'j', result: 'incorrect' },
             { letter: 'h', result: 'incorrect' },
             { letter: 'e', result: 'incorrect' },
-            { letter: 'j', result: 'incorrect' }
+            { letter: 'a', result: 'correct' }
         ]);
     });
     it('should label the first l in hallå as incorrect as theres already a correct "l"', () => {
