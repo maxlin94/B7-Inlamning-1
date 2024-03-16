@@ -11,7 +11,7 @@ export function wordleCompare(guessWord, correctWord) {
         }
     });
     GUESS.forEach((letter, index) => {
-        if(CORRECT.includes(letter)) {
+        if(CORRECT.includes(letter) && RESULT[index].result === 'incorrect') {
             RESULT[index].result = 'misplaced';
         }
     })
