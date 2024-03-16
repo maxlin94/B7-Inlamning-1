@@ -9,7 +9,8 @@ Test cases for the wordleCompare function:
 5. Verify the function works even if there are multiple instances of the same letter before a correct letter.
 6. Confirm the function works even if there are multiple instances of the same letter after a correct letter.
 7. Ensure the function works even if there are multiple letters misplaced.
-8. Validate the function works even if one or both strings are null.
+8. Verify the function ignores lower/upper case.
+9. Validate the function works even if one or both strings are null.
 */
 
 describe('wordleCompare', () => {
@@ -64,6 +65,16 @@ describe('wordleCompare', () => {
             { letter: 'b', result: 'misplaced' },
             { letter: 'b', result: 'misplaced' },
             { letter: 'b', result: 'misplaced' },
+        ]);
+    });
+    it('should ignore lower/upper case', () => {
+        expect(wordleCompare('aaabbb', 'AAABBB')).toEqual([
+            { letter: 'a', result: 'correct' },
+            { letter: 'a', result: 'correct' },
+            { letter: 'a', result: 'correct' },
+            { letter: 'b', result: 'correct' },
+            { letter: 'b', result: 'correct' },
+            { letter: 'b', result: 'correct' },
         ]);
     });
     it('should handle inputs being null', () => {
