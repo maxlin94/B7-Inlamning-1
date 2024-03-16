@@ -78,6 +78,8 @@ describe('wordleCompare', () => {
         ]);
     });
     it('should handle inputs being null', () => {
+        expect(wordleCompare('hello', null)).toEqual([]);
+        expect(wordleCompare(null, 'hello')).toEqual([]);
         expect(wordleCompare(null, null)).toEqual([]);
     });
 });
