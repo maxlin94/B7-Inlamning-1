@@ -82,4 +82,12 @@ describe('wordleCompare', () => {
         expect(wordleCompare(null, 'hello')).toEqual([]);
         expect(wordleCompare(null, null)).toEqual([]);
     });
+    it('should handle multiple letters of the same type before/after a correct letter', () => {
+        expect(wordleCompare('aabc', 'bbac')).toEqual([
+            { letter: 'a', result: 'misplaced' },
+            { letter: 'a', result: 'incorrect' },
+            { letter: 'b', result: 'misplaced' },
+            { letter: 'c', result: 'correct' }
+        ]);
+    });
 });
